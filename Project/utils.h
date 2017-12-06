@@ -1,16 +1,17 @@
 #ifndef __utils__
 #define __utils__
 
+#include "Definitions.h"
 #include "Neuron.h"
+#include "NeuronData.h"
 #include <iostream>
 #include <pthread.h>
 #include <semaphore.h>
 #include <string>
-
-typedef pthread_t Thread;
-typedef sem_t Semaphore;
+#include <vector>
 
 void log(std::string);
-int createThread(Thread *t, Neuron *n);
+int createThread(Thread *t, Neuron *n, NeuronData *nd);
+void *routine(void *nd);
 
 #endif
